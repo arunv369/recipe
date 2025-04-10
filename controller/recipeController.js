@@ -39,7 +39,7 @@ exports.updateRecipe = async (req, res) => {
     });
     if (!recipe)
       return res.status(404).json({ error: "Recipe not found for update" });
-    res.status(200).json(recipe);
+    res.status(200).json({ message: "Recipe updated successfully!", recipe });
   } catch (err) {
     res.status(500).json({ error: error.message });
   }
